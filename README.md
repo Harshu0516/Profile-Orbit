@@ -39,19 +39,6 @@ cd backend
 npm start
 -Adjust the port and URL based on your backend configuration.
 
-
-## Directory Structure
-/profile-orbit/
-  ├─ /frontend/
-  │   ├─ /src/
-  │   ├─ /public/
-  │   └─ package.json
-  ├─ /backend/
-  │   ├─ /src/
-  │   ├─ /config/
-  │   └─ package.json
-  └─ README.md
-
 # Your Contribution is highly Supported 😊
 
 Contributing
