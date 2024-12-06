@@ -1,10 +1,10 @@
 # Profile-Orbit
 👋 Hello 
 
-Profile Orbit is a web application designed to provide detailed analysis of coding profiles from various platforms like LeetCode, GeeksforGeeks, CodeChef, and more. Users can view their problem-solving activity, rankings, charts, and other insightful metrics.
+Profile Orbit is a web application designed to provide detailed analysis of coding profiles from various platforms, such as LeetCode, GeeksforGeeks, CodeChef, and more. Users can view their problem-solving activity, rankings, charts, and other insightful metrics.
 
 ## Features
--Profile Analysis: Detailed insights into user profiles from platforms like LeetCode, GeeksforGeeks, Codechef,HackerRank, HackerEarth, CodingNinjas and many more.
+-Profile Analysis: Detailed insights into user profiles from platforms like LeetCode, GeeksforGeeks, Codechef, HackerRank, HackerEarth, CodingNinjas and many more.
 -Problem Statistics: Track problems solved, stars earned, and rankings.
 -Charts and Graphs: Visualize problem-solving trends and activity.
 -User Activity: View detailed activity logs and metrics.
@@ -25,7 +25,7 @@ git clone https://github.com/your-username/profile-orbit.git
 cd profile-orbit
 -Install Dependencies:
 
-For frontend dependencies and For backend dependencies (if applicable):
+For frontend dependencies and backend dependencies (if applicable):
 cd backend
 npm install
 
