@@ -1,8 +1,30 @@
+/* Add light/dark mode toggle later if needed */
+/* App.css - Global Styles */
+
+:root {
+  --primary: #6c63ff;
+  --secondary: #928dab;
+  --bg-dark: #1f1c2c;
+  --text-light: #ffffff;
+  --text-muted: #dcdcdc;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  --radius: 10px;
+}
+
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: white;
+  background: var(--bg-dark);
+  color: var(--text-light);
 }
 
-/* Add light/dark mode toggle later if needed */
+a {
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+a:hover {
+  color: var(--primary);
+}

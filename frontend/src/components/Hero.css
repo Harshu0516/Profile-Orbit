@@ -1,29 +1,52 @@
 .hero {
-    background-image:  url('https://img.freepik.com/free-vector/abstract-futuristic-background-concept_52683-32159.jpg?t=st=1744478954~exp=1744482554~hmac=48f73e9c6ce2817f63b6bce63b39847376a0f1f9795d389a3d78be0839b3f19f&w=1380');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 20px;
-    text-align: center;
-    color: white;
-  }
-  
-  .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .cta-btn {
-    padding: 12px 24px;
-    background-color: #6c63ff;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .cta-btn:hover {
-    background-color: #5548d9;
-  }
-  
+  position: relative;
+  background-image: url('https://img.freepik.com/free-vector/abstract-wavy-background-digital-technology-futuristic-vector-line-design_314614-1624.jpg?t=st=1745046817~exp=1745050417~hmac=04520e8be92ac6fe0404501cfd82de86a9e20c9ab89afa56069041b5735ab08b&w=1380');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  text-align: center;
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  padding: 12px 24px;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.cta-btn:hover {
+  background-color: #5548d9;
+}

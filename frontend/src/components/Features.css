@@ -1,42 +1,113 @@
 .features {
-    padding: 60px 20px;
+    padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.features h2 {
+  }
+  
+  .features h2 {
     font-size: 2.5em;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.feature-cards {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Central timeline container */
+  .roadmap {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  .roadmap::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #6c63ff;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  
+  /* Individual steps */
+  .roadmap-step {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 40px 0;
+    position: relative;
+    width: 100%;
+  }
+  
+  .roadmap-step:nth-child(even) {
+    justify-content: flex-end;
+  }
+  
+  .step-content {
+    background: rgba(255, 255, 255, 0.08);
     padding: 20px 30px;
-    width: 250px;
+    border-radius: 12px;
+    max-width: 400px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  }
+  
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #6c63ff;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Text inside content */
+  .step-content h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
     color: #ffffff;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.card h3 {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #ffffff;
-}
+  }
+  
+  .step-content p {
+    font-size: 1em;
+    color: #dcdcdc;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .roadmap-step {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .roadmap-step:nth-child(even) {
+      justify-content: center;
+    }
+  
+    .step-content {
+      text-align: center;
+    }
+  
+    .roadmap::before {
+      left: 50%;
+    }
+  
+    .step-circle {
+      top: -20px;
+    }
+  }
+  
