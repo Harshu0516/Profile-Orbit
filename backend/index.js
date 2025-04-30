@@ -5,8 +5,8 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const statsRoutes = require('./routes/statsRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
-const codechefRouter = require('./routes/codechef');
-
+const codechefRoutes = require('./routes/codechef');
+const codechefContestsRoutes= require('./routes/codechefContests');
 
 dotenv.config();
 connectDB();
@@ -20,7 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/stats', statsRoutes);
 app.use('/api/upload', uploadRoutes);
-app.use('/api/codechef', codechefRouter);
+app.use('/api/codechef', codechefRoutes); // Existing user profile route
+app.use('/api', codechefContestsRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
