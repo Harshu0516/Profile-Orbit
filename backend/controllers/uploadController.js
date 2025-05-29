@@ -5,6 +5,6 @@ exports.uploadCSV = async (req, res) => {
   const file = req.file;
   if (!file) return res.status(400).json({ message: 'No file uploaded' });
 
-  // Parse CSV here (not fully implemented)
-  res.json({ message: 'CSV Uploaded Successfully' });
+  // TODO: Implement CSV parsing and saving data to Stats
+  res.json({ message: 'CSV Uploaded Successfully (not yet parsed)' });
 };

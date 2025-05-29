@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
   codingProfiles: {
     leetcode: String,
     gfg: String,
-    codeforces: String
+    codeforces: String,
+    codechef: String  // ✅ Added
   }
 });
 

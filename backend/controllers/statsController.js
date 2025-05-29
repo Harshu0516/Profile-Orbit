@@ -1,6 +1,4 @@
-const { fetchLeetCodeStats } = require('../services/leetcodeService');
-const { fetchCodeforcesStats } = require('../services/codeforcesService');
-const { scrapeGFGProfile } = require('../services/gfgScraperService');
+const { fetchCodechefStats } = require('../services/codechefService');
 const Stats = require('../models/Stats');
 
 exports.getStats = async (req, res) => {
@@ -16,14 +14,14 @@ exports.getStats = async (req, res) => {
 exports.refreshStats = async (req, res) => {
   const userId = req.user.id;
   try {
-    const { leetcode, codeforces, gfg } = req.body;
-    const leetcodeStats = await fetchLeetCodeStats(leetcode);
-    const codeforcesStats = await fetchCodeforcesStats(codeforces);
-    const gfgStats = await scrapeGFGProfile(gfg);
+    const { codechef } = req.body;
+    if (!codechef) return res.status(400).json({ message: 'CodeChef username required' });
+
+    const codechefStats = await fetchCodechefStats(codechef);
 
     const updatedStats = await Stats.findOneAndUpdate(
       { userId },
-      { leetcodeStats, codeforcesStats, gfgStats, updatedAt: Date.now() },
+      { codechefStats, updatedAt: Date.now() },
       { upsert: true, new: true }
     );
 
