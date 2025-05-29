@@ -5,6 +5,7 @@ const statsSchema = new mongoose.Schema({
   leetcodeStats: Object,
   gfgStats: Object,
   codeforcesStats: Object,
+  codechefStats: Object, // ✅ Added
   updatedAt: { type: Date, default: Date.now }
 });
 

@@ -15,9 +15,16 @@ exports.fetchLeetCodeStats = async (username) => {
     }
   `;
 
-  const res = await axios.post('https://leetcode.com/graphql', { query }, {
-    headers: { 'Content-Type': 'application/json' }
-  });
+  try {
+    const res = await axios.post(
+      'https://leetcode.com/graphql',
+      { query },
+      { headers: { 'Content-Type': 'application/json' } }
+    );
 
-  return res.data.data.matchedUser.submitStats.acSubmissionNum;
+    return res.data.data.matchedUser.submitStats.acSubmissionNum;
+  } catch (error) {
+    console.error('LeetCode API error:', error.message);
+    throw new Error('Failed to fetch LeetCode stats');
+  }
 };
